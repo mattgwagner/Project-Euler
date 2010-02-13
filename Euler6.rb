@@ -10,12 +10,7 @@
 #Find the difference between the sum of the squares of the first one hundred
 #natural numbers and the square of the sum.
 
-sumOfSq = 0
-sqOfSum = 0
-
-(1..100).each do |x|
-	sqOfSum += x
-	sumOfSq += (x*x)
-end
+sqOfSum = (1..100).inject{|sum, current| sum += current}
+sumOfSq = (1..100).inject{|sum, current| sum += (current*current)}
 
 puts (sqOfSum*sqOfSum - sumOfSq)
