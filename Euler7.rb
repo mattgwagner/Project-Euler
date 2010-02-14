@@ -3,26 +3,14 @@
 #
 #What is the 10001^(st) prime number?
 
-def isPrime?(n)
-	if n % 2 == 0
-		return false
-	end
-	
-	3.step(Math::sqrt(n), 2) do |i|
-		if n % i == 0
-			return false
-		end
-	end
-	
-	true
-end
+require 'Util'
 
 curr = 3
 count = 2
 
 while count < 10001
 	curr+=2
-	if isPrime?(curr)
+	if curr.isPrime?
 		count+=1
 	end
 end
