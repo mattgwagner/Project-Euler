@@ -24,6 +24,7 @@ while count < 10001
 	curr+=2
 	if isPrime?(curr)
 		count+=1
-		print curr, " - ", count, "\n"
 	end
 end
+
+print curr
