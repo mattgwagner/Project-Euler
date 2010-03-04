@@ -8,8 +8,6 @@ require 'Util'
 curr = 3
 count = 2
 
-while count < 10001
-	count += 1 if (curr+=2).isPrime?
-end
+count += 1 if (curr += 2).isPrime? until count == 10001
 
 print curr
