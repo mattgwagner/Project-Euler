@@ -13,8 +13,6 @@ def check? x
 	return true
 end
 
-while !check? current
-	current += 20
-end
+current += 20 while !check? current
 
 puts current
