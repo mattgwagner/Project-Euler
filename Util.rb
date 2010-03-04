@@ -1,19 +1,12 @@
 class Integer
-	def isPrime?
-		if self == 1 or self == 2
-			return true
-		end
-		
-		if self % 2 == 0
-			return false
-		end
+	def isPrime?	
+		return true if self == 2
+		return false if self % 2 == 0 or self < 2
 		
 		3.step(Math::sqrt(self), 2) do |i|
-			if self % i == 0
-				return false
-			end
+			return false if self % i == 0
 		end
 		
-		true
+		return true
 	end
 end

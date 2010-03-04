@@ -9,10 +9,7 @@ curr = 3
 count = 2
 
 while count < 10001
-	curr+=2
-	if curr.isPrime?
-		count+=1
-	end
+	count += 1 if (curr+=2).isPrime?
 end
 
 print curr
