@@ -18,14 +18,12 @@ cnt = 0
 (1...1000000).each do|x|
 	curr = x
 	count = 0	
+	
 	while curr != 1
-		if curr % 2 == 0
-			curr = curr / 2
-		else
-			curr = (3 * curr) + 1
-		end
+		curr = curr % 2 == 0 ? (curr / 2) : (3 * curr + 1)
 		count += 1
 	end
+	
 	if count > cnt
 		largest = x
 		cnt = count
