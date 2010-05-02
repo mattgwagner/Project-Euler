@@ -6,12 +6,11 @@
 ##
 ##Find the sum of all the even-valued terms in the sequence
 ##which do not exceed four million.
-curr = 2
-prev = 1
-sum = 0
+l = []
+prev,curr = 1,2
 
 while curr < 4000000:
     if curr % 2 == 0:
-       sum += curr
+       l.append(curr)
     curr,prev = curr+prev,curr
-print(sum)
+print(sum(l))
