@@ -36,6 +36,14 @@ class Integer
 		end
 		res.uniq
 	end
+	
+	def factorial
+		if self == 0
+			1
+		else
+			self * (self-1).factorial
+		end
+	end
 end
 
 #borrowed from StackOverflow QuestionId:768821
