@@ -11,23 +11,37 @@
 ##Which starting number, under one million, produces the longest chain?
 ##
 ##NOTE: Once the chain starts the terms are allowed to go above one million.
+$dict = {}
 
-largest = 0
-cnt = 0
-
-(1...1000000).each do|x|
-	curr = x
-	count = 0	
-	
-	while curr != 1
-		curr = curr % 2 == 0 ? (curr / 2) : (3 * curr + 1)
-		count += 1
+def count(key)
+	x = key
+	count = 0
+	while x != 1
+		if not $dict.include? x
+			count += 1
+			if x % 2 == 0
+				x = x / 2
+			else
+				x = 3 * x + 1
+			end
+		else
+			count += $dict[x]
+			break
+		end
 	end
 	
-	if count > cnt
-		largest = x
-		cnt = count
+	#sets the key to the count, and returns the count
+	$dict[key] = count
+end
+
+longest = 0
+length = 0
+
+for x in (1..1000000)
+	if count(x).to_i > length.to_i
+		length = count x
+		longest = x
 	end
 end
 
-puts largest
+puts longest
