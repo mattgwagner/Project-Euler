@@ -1,15 +1,14 @@
 #What is the value of the first triangle number to have over five hundred divisors?
 require 'Util'
 
-past = 1
-
-(1..500000).each do|x|
-	if past.calc_divisors.size > 500
-		puts x
-		break
-	end
-	
-	past +=x
+def get_triangle_sum(i)
+	return (1..i).inject{|sum,x| sum + x}
 end
 
-#NOT FINISHED
+curr = 1
+
+while get_triangle_sum(curr).get_divisors.size < 500
+	curr += 1
+end
+
+puts get_triangle_sum(curr)
