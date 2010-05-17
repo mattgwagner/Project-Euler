@@ -17,24 +17,14 @@ class Integer
 	def get_divisors
 		s = Set.new
 	
-		(1..self*0.5).each do|c|
-			s.add c if self % c == 0
+		(1..Math::sqrt(self)).each do|c|
+			if self % c == 0
+				s.add c
+				s.add (self / c)
+			end
 		end
 	
 		s.add(self)
-	end
-	
-	def calc_divisors
-		res=[1]
-		2.upto(Math.sqrt(self).floor) do |i|
-			if self % i == 0
-				res << i
-			end
-		end
-		res.reverse.each do |i|
-			res << self / i
-		end
-		res.uniq
 	end
 	
 	def factorial
