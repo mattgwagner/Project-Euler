@@ -5,18 +5,13 @@
 ##
 ##There exists exactly one Pythagorean triplet for which a + b + c = 1000.
 ##Find the product abc.
-a,b,c = 1,2,3
-done = False
+import math
 
-while not done:
-    if a + b + c == 1000:
-        done = True
-    else:
-        for 
+def check(a,b,c):
+    return (a**2 + b**2 == c**2) and (a < b < c) and (a + b + c == 1000)
 
-print(a*b*c)
-
-
-    
-
-
+for a in range(1,1000):
+    for b in range(a+1,1000):
+        c = math.sqrt(a**2 + b**2)
+        if check(a,b,c):
+            print (a * b * c)
