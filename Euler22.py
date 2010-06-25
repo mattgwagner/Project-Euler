@@ -29,7 +29,7 @@ def score(name):
 with open(os.path.join(sys.path[0], "Euler22.txt")) as file:
     for name in file.read().split(','):
        names.append(name.replace("\"", ""))
-
+	   
 names.sort()
 
 print sum(score(name) for name in names)
