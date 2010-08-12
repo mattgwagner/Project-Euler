@@ -1,10 +1,11 @@
 ﻿using System.Linq;
 using System.Numerics;
+using ProjectEuler;
 
-class Euler20 : ProjectEuler.EulerProblem
+class Euler20 : EulerProblem
 {
     public override BigInteger solution()
     {
-        return factorial(100).ToString().Sum(c => int.Parse(c.ToString()));
+        return new BigInteger(100).factorial().ToString().Sum(c => int.Parse(c.ToString()));
     }
 }
