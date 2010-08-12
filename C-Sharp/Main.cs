@@ -51,5 +51,17 @@ namespace ProjectEuler
         {
             throw new NotImplementedException("Fail");
         }
+
+        public static BigInteger sum(this IEnumerable<BigInteger> list)
+        {
+            BigInteger sum = 0;
+
+            foreach(BigInteger b in list)
+            {
+                sum += b;
+            }
+
+            return sum;
+        }
     }
 }
