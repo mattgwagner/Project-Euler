@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Numerics;
 
-public class MyClass
+public class Euler19 : ProjectEuler.EulerProblem
 {
-	public static void Main()
+	public override BigInteger solution()
 	{
 		int count = 0;
 		
@@ -19,6 +20,6 @@ public class MyClass
 			d = d.AddMonths(1);
 		}
 		
-		Console.WriteLine(count);
+		return count;
 	}
 }
