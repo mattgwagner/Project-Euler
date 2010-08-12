@@ -52,7 +52,10 @@ namespace ProjectEuler
             throw new NotImplementedException("Fail");
         }
 
-        public static BigInteger sum(this IEnumerable<BigInteger> list)
+        /// <summary>
+        /// Sums an IEnumerable filled with BigIntegers since this isn't available via normal LINQ
+        /// </summary>
+        public static BigInteger Sum(this IEnumerable<BigInteger> list)
         {
             BigInteger sum = 0;
 

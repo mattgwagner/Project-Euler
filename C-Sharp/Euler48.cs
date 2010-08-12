@@ -9,7 +9,7 @@ class Euler48 : EulerProblem
 {
     public override BigInteger solution()
     {
-        string output = getPowers().sum().ToString();
+        string output = getPowers().Sum().ToString();
 
         return BigInteger.Parse(output.Substring(output.Length - 10));
     }
