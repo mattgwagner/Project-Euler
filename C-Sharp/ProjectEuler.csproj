@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Euler16.cs" />
     <Compile Include="Euler2.cs" />
     <Compile Include="Euler5.cs" />
     <Compile Include="Main.cs" />
