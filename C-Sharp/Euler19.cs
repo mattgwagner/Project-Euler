@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Numerics;
 
 public class Euler19 : ProjectEuler.EulerProblem
