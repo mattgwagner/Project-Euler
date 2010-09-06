@@ -52,6 +52,11 @@ namespace ProjectEuler
             throw new NotImplementedException("Fail");
         }
 
+        public static Boolean isPalindrome(this String str)
+        {
+            return str.Equals(new String(str.Reverse().ToArray()));
+        }
+
         /// <summary>
         /// Sums an IEnumerable filled with BigIntegers since this isn't available via normal LINQ
         /// </summary>
