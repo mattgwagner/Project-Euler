@@ -3,7 +3,7 @@ using System.Numerics;
 
 class Euler5 : ProjectEuler.EulerProblem
 {
-    public override BigInteger solution()
+    public override object Solution()
     {
         int current = 20;
 

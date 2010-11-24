@@ -6,7 +6,7 @@ class Euler2 : ProjectEuler.EulerProblem
 {
     const int MAX = 4000000;
 
-    public override BigInteger solution()
+    public override object Solution()
     {
         return getEvenFibonaciTo4Million().Sum();
     }

@@ -18,7 +18,7 @@ namespace ProjectEuler
 
             problem = (EulerProblem)Activator.CreateInstance(Type.GetType("Euler" + problem_no));
 
-            Console.WriteLine("Answer for Question {0}: {1}", problem.GetType(), problem.solution());
+            Console.WriteLine("Answer for Question {0}: {1}", problem.GetType(), problem.Solution());
 
             Console.ReadLine();
         }
@@ -29,7 +29,7 @@ namespace ProjectEuler
     /// </summary>
     public abstract class EulerProblem
     {
-        public abstract BigInteger solution();
+        public abstract object Solution();
     }
 
     /// <summary>
@@ -42,19 +42,21 @@ namespace ProjectEuler
             return f != 1 ? (f * factorial(f - 1)) : 1;
         }
 
-        public static Boolean isPrime(this BigInteger p)
-        {
-            throw new NotImplementedException("Fail");
-        }
-
-        public static IEnumerable<BigInteger> factorize(this BigInteger f)
-        {
-            throw new NotImplementedException("Fail");
-        }
-
         public static Boolean isPalindrome(this String str)
         {
             return str.Equals(new String(str.Reverse().ToArray()));
+        }
+
+        public static int Product(this IEnumerable<int> l)
+        {
+            int product = 1;
+
+            foreach (var i in l)
+            {
+                product *= i;
+            }
+
+            return product;
         }
 
         /// <summary>

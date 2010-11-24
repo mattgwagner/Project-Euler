@@ -7,7 +7,7 @@ using ProjectEuler;
 
 class Euler4 : EulerProblem
 {
-    public override BigInteger solution()
+    public override object Solution()
     {
         return getPalindromicNumbersUpTo1000().Max();
     }

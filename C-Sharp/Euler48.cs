@@ -5,7 +5,7 @@ using ProjectEuler;
 
 class Euler48 : EulerProblem
 {
-    public override BigInteger solution()
+    public override object Solution()
     {
         string output = getPowers().Sum().ToString();
 
