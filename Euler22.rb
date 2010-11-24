@@ -7,6 +7,7 @@ What is the total of all the name scores in the file?
 
 ANSWER: 871198282
 =end
+require 'jcode'
 $letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 $names = Array.new
 
