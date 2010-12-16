@@ -67,12 +67,14 @@
     <Compile Include="Euler2.cs" />
     <Compile Include="Euler20.cs" />
     <Compile Include="Euler29.cs" />
+    <Compile Include="Euler3.cs" />
     <Compile Include="Euler35.cs" />
     <Compile Include="Euler4.cs" />
     <Compile Include="Euler42.cs" />
     <Compile Include="Euler48.cs" />
     <Compile Include="Euler5.cs" />
     <Compile Include="Euler6.cs" />
+    <Compile Include="Euler7.cs" />
     <Compile Include="Euler8.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Euler1.cs" />

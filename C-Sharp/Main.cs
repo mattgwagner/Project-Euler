@@ -30,6 +30,32 @@ namespace ProjectEuler
     public abstract class EulerProblem
     {
         public abstract object Solution();
+
+        // borrowed from http://digitalbush.com/2010/02/26/sieve-of-eratosthenes-in-csharp/
+        protected static IEnumerable<int> FindPrimesUpToMax(int max)
+        {
+            var vals = new List<int>((int)(max / (Math.Log(max) - 1.08366)));
+            var maxSquareRoot = Math.Sqrt(max);
+            var eliminated = new System.Collections.BitArray(max + 1);
+
+            vals.Add(2);
+
+            for (int i = 3; i <= max; i += 2)
+            {
+                if (!eliminated[i])
+                {
+                    if (i < maxSquareRoot)
+                    {
+                        for (int j = i * i; j <= max; j += 2 * i)
+                            eliminated[j] = true;
+                    }
+
+                    vals.Add(i);
+                }
+            }
+
+            return vals;
+        }
     }
 
     /// <summary>
@@ -37,6 +63,18 @@ namespace ProjectEuler
     /// </summary>
     public static class ExtensionUtils
     {
+        public static Boolean IsPrime(this int integer)
+        {
+            if(integer % 2 == 0) return true;
+
+            for (int i = 3; i < integer; i++)
+            {
+                if (integer % i == 0) return false;
+            }
+
+            return true;
+        }
+
         public static BigInteger factorial(this BigInteger f)
         {
             return f != 1 ? (f * factorial(f - 1)) : 1;
@@ -66,7 +104,7 @@ namespace ProjectEuler
         {
             BigInteger sum = 0;
 
-            foreach(BigInteger b in list)
+            foreach (BigInteger b in list)
             {
                 sum += b;
             }
