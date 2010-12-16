@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using System.Numerics;
 
 class Euler5 : ProjectEuler.EulerProblem
 {

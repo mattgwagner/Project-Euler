@@ -1,5 +1,4 @@
 using System;
-using System.Numerics;
 
 public class Euler19 : ProjectEuler.EulerProblem
 {

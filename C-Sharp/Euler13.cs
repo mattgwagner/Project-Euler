@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using ProjectEuler;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
+using ProjectEuler;
 
 class Euler13 : EulerProblem
 {
