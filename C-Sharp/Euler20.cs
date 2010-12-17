@@ -6,6 +6,6 @@ class Euler20 : EulerProblem
 {
     public override object Solution()
     {
-        return new BigInteger(100).factorial().ToString().Sum(c => int.Parse(c.ToString()));
+        return new BigInteger(100).Factorial().ToString().Sum(c => int.Parse(c.ToString()));
     }
 }

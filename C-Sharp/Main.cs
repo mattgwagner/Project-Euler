@@ -17,7 +17,17 @@ namespace ProjectEuler
 
             problem = (EulerProblem)Activator.CreateInstance(Type.GetType("Euler" + problem_no));
 
-            Console.WriteLine("Answer for Question {0}: {1}", problem.GetType(), problem.Solution());
+            DateTime start = DateTime.Now;
+
+            Console.WriteLine("\nStarted at {0}...", start);
+
+            Console.WriteLine("\nAnswer for Question {0}: {1}", problem.GetType(), problem.Solution());
+
+            DateTime finish = DateTime.Now;
+
+            Console.WriteLine("\nFinished at {0}...", finish);
+
+            Console.WriteLine("\nElapsed time: {0}ms", (finish - start).Milliseconds);
 
             Console.ReadLine();
         }
@@ -64,7 +74,7 @@ namespace ProjectEuler
     {
         public static Boolean IsPrime(this int integer)
         {
-            if(integer % 2 == 0) return true;
+            if (integer % 2 == 0) return true;
 
             for (int i = 3; i < integer; i++)
             {
@@ -74,9 +84,18 @@ namespace ProjectEuler
             return true;
         }
 
-        public static BigInteger factorial(this BigInteger f)
+        public static int Factorial(this int f)
         {
-            return f != 1 ? (f * factorial(f - 1)) : 1;
+            if (f == 0) return 1;
+
+            return f != 1 ? (f * Factorial(f - 1)) : 1;
+        }
+
+        public static BigInteger Factorial(this BigInteger f)
+        {
+            if (f == 0) return 1;
+
+            return f != 1 ? (f * Factorial(f - 1)) : 1;
         }
 
         public static Boolean isPalindrome(this String str)
