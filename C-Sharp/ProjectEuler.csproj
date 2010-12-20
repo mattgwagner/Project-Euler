@@ -76,6 +76,7 @@
     <Compile Include="Euler48.cs" />
     <Compile Include="Euler5.cs" />
     <Compile Include="Euler53.cs" />
+    <Compile Include="Euler59.cs" />
     <Compile Include="Euler6.cs" />
     <Compile Include="Euler7.cs" />
     <Compile Include="Euler8.cs" />
@@ -114,6 +115,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Euler42.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Euler59.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

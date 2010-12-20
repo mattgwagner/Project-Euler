@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using System.Diagnostics;
 
 namespace ProjectEuler
 {
@@ -17,17 +18,11 @@ namespace ProjectEuler
 
             problem = (EulerProblem)Activator.CreateInstance(Type.GetType("Euler" + problem_no));
 
-            DateTime start = DateTime.Now;
+            Stopwatch sw = Stopwatch.StartNew();
 
-            Console.WriteLine("\nStarted at {0}...", start);
+            Console.WriteLine("\nAnswer for Question {0}: {1}", problem_no, problem.Solution());
 
-            Console.WriteLine("\nAnswer for Question {0}: {1}", problem.GetType(), problem.Solution());
-
-            DateTime finish = DateTime.Now;
-
-            Console.WriteLine("\nFinished at {0}...", finish);
-
-            Console.WriteLine("\nElapsed time: {0}ms", (finish - start).Milliseconds);
+            Console.WriteLine("\nElapsed time: {0}ms", sw.ElapsedMilliseconds);
 
             Console.ReadLine();
         }
