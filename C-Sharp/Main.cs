@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Diagnostics;
+using System.Threading;
 
 namespace ProjectEuler
 {
@@ -20,9 +21,12 @@ namespace ProjectEuler
 
             Stopwatch sw = Stopwatch.StartNew();
 
-            Console.WriteLine("\nAnswer for Question {0}: {1}", problem_no, problem.Solution());
+            using (Timer t = new Timer(o => Console.WriteLine("Elapsed: {0}ms", sw.ElapsedMilliseconds), null, 0, 3000))
+            {
+                Console.WriteLine("\nAnswer for Question {0}: {1}", problem_no, problem.Solution());
 
-            Console.WriteLine("\nElapsed time: {0}ms", sw.ElapsedMilliseconds);
+                Console.WriteLine("\nTotal time: {0}ms", sw.ElapsedMilliseconds);
+            }
 
             Console.ReadLine();
         }
