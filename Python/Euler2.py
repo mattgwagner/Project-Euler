@@ -6,11 +6,12 @@
 ##
 ##Find the sum of all the even-valued terms in the sequence
 ##which do not exceed four million.
-l = []
-prev,curr = 1,2
 
-while curr < 4000000:
-    if curr % 2 == 0:
-       l.append(curr)
-    curr,prev = curr+prev,curr
-print(sum(l))
+def fib_generator():
+	a, b = 1, 2
+	yield 1
+	while b < 4000000:
+		yield b
+		a, b = b, a+b
+
+print sum(x for x in fib_generator() if x % 2 == 0)

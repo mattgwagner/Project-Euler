@@ -1,12 +1,8 @@
-largest = 0
+def digits_gen():
+	for x in range(100, 1000):
+		for y in range(100,1000):
+			s = str(x*y)
+			if(s == s[::-1]):
+				yield (x*y)
 
-def isPalindrome(x):
-    return x == x[::-1]
-
-for x in range(100,1000):
-    for y in range(100,1000):
-        if(isPalindrome(str(x*y))):
-            if(x*y > largest):
-                largest = x*y
-
-print(largest)
+print max(digits_gen())

@@ -21,7 +21,7 @@ namespace ProjectEuler
 
             Stopwatch sw = Stopwatch.StartNew();
 
-            using (Timer t = new Timer(o => Console.WriteLine("Elapsed: {0}ms", sw.ElapsedMilliseconds), null, 0, 3000))
+            using (Timer t = new Timer(o => Console.WriteLine("Elapsed: {0}ms", sw.ElapsedMilliseconds), null, 0, 5000))
             {
                 Console.WriteLine("\nAnswer for Question {0}: {1}", problem_no, problem.Solution());
 

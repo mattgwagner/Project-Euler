@@ -60,11 +60,14 @@ public class Euler11 : EulerProblem
     {
         int largest = 0;
 
-        for (int x = 0; x < 15; x++)
+        for (int xStart = 0; xStart <= 15; xStart++)
         {
+            for (int yStart = 0; yStart <= 15; yStart++)
+            {
 
+            }
         }
-
+        
         return largest;
     }
 
