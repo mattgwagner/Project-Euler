@@ -62,13 +62,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Euler10.cs" />
     <Compile Include="Euler11.cs" />
+    <Compile Include="Euler12.cs" />
     <Compile Include="Euler13.cs" />
     <Compile Include="Euler14.cs" />
     <Compile Include="Euler16.cs" />
     <Compile Include="Euler2.cs" />
     <Compile Include="Euler20.cs" />
     <Compile Include="Euler22.cs" />
+    <Compile Include="Euler24.cs" />
     <Compile Include="Euler29.cs" />
     <Compile Include="Euler3.cs" />
     <Compile Include="Euler35.cs" />
