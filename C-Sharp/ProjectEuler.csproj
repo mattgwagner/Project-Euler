@@ -62,6 +62,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Euler21.cs" />
     <Compile Include="Euler10.cs" />
     <Compile Include="Euler11.cs" />
     <Compile Include="Euler12.cs" />
