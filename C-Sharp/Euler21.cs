@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
+/* vEvaluate the sum of all the amicable numbers under 10000. */
 public class Euler21 : ProjectEuler.EulerProblem
 {
     public override object Solution()

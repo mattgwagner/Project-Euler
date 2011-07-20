@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Numerics;
 using ProjectEuler;
 
+/* What is the first term in the Fibonacci sequence to contain 1000 digits? */
 class Euler25 : EulerProblem
 {
     public override object Solution()
