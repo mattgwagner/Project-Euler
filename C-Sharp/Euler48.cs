@@ -3,6 +3,7 @@ using System.Linq;
 using System.Numerics;
 using ProjectEuler;
 
+/* Find the last ten digits of the series, 1^1 + 2^2 + 3^3 + ... + 1000^1000. */
 class Euler48 : EulerProblem
 {
     public override object Solution()
