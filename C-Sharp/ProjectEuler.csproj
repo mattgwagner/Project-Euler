@@ -72,7 +72,7 @@
     <Compile Include="Euler2.cs" />
     <Compile Include="Euler20.cs" />
     <Compile Include="Euler22.cs" />
-    <Compile Include="Euler24.cs" />
+    <Compile Include="Euler25.cs" />
     <Compile Include="Euler29.cs" />
     <Compile Include="Euler3.cs" />
     <Compile Include="Euler35.cs" />
