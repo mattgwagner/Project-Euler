@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Numerics;
 using ProjectEuler;
-using System;
 
 /* Find the next triangle number that is also pentagonal and hexagonal. */
 public class Euler45 : EulerProblem
@@ -11,16 +10,7 @@ public class Euler45 : EulerProblem
 
     public override object Solution()
     {
-        IEnumerable<BigInteger> triangles = GetTriangles().ToList();
-        IEnumerable<BigInteger> pentagonals = GetPentagonals().ToList();
-        IEnumerable<BigInteger> hexagonals = GetHexagonals().ToList();
-
-        var results = from t in triangles
-                      where pentagonals.Contains(t)
-                      && hexagonals.Contains(t)
-                      select t;
-
-        return results.FirstOrDefault();
+        return GetTriangles().Intersect(GetPentagonals()).Intersect(GetHexagonals()).FirstOrDefault();
     }
 
     IEnumerable<BigInteger> GetTriangles()
