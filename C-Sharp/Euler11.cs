@@ -11,73 +11,84 @@ public class Euler11 : EulerProblem
     {
         ReadNumbers();
 
-        return new int[] { LargestHorizontally(), LargestVertically(), LargestDiagonallyRight(), LargestDiagonallyLeft() }.Max();
+        return LargestHorizontally().Union(LargestVertically()).Union(LargestDiagonallyRight()).Union(LargestDiagonallyLeft()).Max();
     }
 
-    protected int LargestHorizontally()
+    protected IEnumerable<int> LargestHorizontally()
     {
-        int largest = 0;
-
-        Queue<int> q = new Queue<int>(5);
-
-        for (int y = 0; y < 20; y++)
+        for (int y = 0; y <= 19; y++)
         {
-            for (int x = 0; x < 20; x++)
+            for (int x = 0; x <= 16; x++)
             {
-                while (q.Count > 3) q.Dequeue();
+                int product = new int[]
+                {
+                    nums[x, y],
+                    nums[x+1, y],
+                    nums[x+2, y],
+                    nums[x+3, y]
+                }.Product();
 
-                q.Enqueue(nums[y, x]);
-
-                if (q.Product() > largest) largest = q.Product();
+                yield return product;
             }
         }
-
-        return largest;
     }
 
-    protected int LargestVertically()
+    protected IEnumerable<int> LargestVertically()
     {
-        int largest = 0;
-
-        Queue<int> q = new Queue<int>(5);
-
-        for (int x = 0; x < 20; x++)
+        for (int x = 0; x <= 19; x++)
         {
-            for (int y = 0; y < 20; y++)
+            for (int y = 0; y <= 16; y++)
             {
-                while (q.Count > 3) q.Dequeue();
+                int product = new int[]
+                {
+                    nums[x, y],
+                    nums[x, y+1],
+                    nums[x, y+2],
+                    nums[x, y+3]
 
-                q.Enqueue(nums[y, x]);
+                }.Product();
 
-                if (q.Product() > largest) largest = q.Product();
+                yield return product;
             }
         }
-
-        return largest;
     }
 
-    protected int LargestDiagonallyRight()
+    protected IEnumerable<int> LargestDiagonallyRight()
     {
-        int largest = 0;
-
-        for (int xStart = 0; xStart <= 15; xStart++)
+        for (int xStart = 0; xStart <= 16; xStart++)
         {
-            for (int yStart = 0; yStart <= 15; yStart++)
+            for (int yStart = 0; yStart <= 16; yStart++)
             {
+                int product = new int[] 
+                { 
+                    nums[xStart, yStart],
+                    nums[xStart+1, yStart+1],
+                    nums[xStart+2, yStart+2],
+                    nums[xStart+3, yStart+3],
+                }.Product();
 
+                yield return product;
             }
         }
-        
-        return largest;
     }
 
-    protected int LargestDiagonallyLeft()
+    protected IEnumerable<int> LargestDiagonallyLeft()
     {
-        int largest = 0;
+        for (int xStart = 0; xStart <= 16; xStart++)
+        {
+            for (int yStart = 0; yStart <= 16; yStart++)
+            {
+                int product = new int[] 
+                { 
+                    nums[xStart+3, yStart],
+                    nums[xStart+2, yStart+1],
+                    nums[xStart+1, yStart+2],
+                    nums[xStart, yStart+3],
+                }.Product();
 
-        // TODO
-
-        return largest;
+                yield return product;
+            }
+        }
     }
 
     protected void ReadNumbers()
