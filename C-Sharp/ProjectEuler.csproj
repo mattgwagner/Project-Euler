@@ -83,6 +83,7 @@
     <Compile Include="Euler45.cs" />
     <Compile Include="Euler48.cs" />
     <Compile Include="Euler5.cs" />
+    <Compile Include="Euler52.cs" />
     <Compile Include="Euler53.cs" />
     <Compile Include="Euler59.cs" />
     <Compile Include="Euler6.cs" />
