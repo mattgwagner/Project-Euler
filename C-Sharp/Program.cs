@@ -14,7 +14,7 @@ namespace ProjectEuler
 
             int problem_no = int.Parse(Console.ReadLine());
 
-            problem = (EulerProblem)Activator.CreateInstance(Type.GetType("Euler" + problem_no));
+            problem = (EulerProblem)Activator.CreateInstance(Type.GetType("ProjectEuler.Euler" + problem_no));
 
             Stopwatch sw = Stopwatch.StartNew();
 
