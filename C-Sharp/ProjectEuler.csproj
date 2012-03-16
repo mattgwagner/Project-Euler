@@ -55,11 +55,6 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Euler21.cs" />
@@ -93,7 +88,9 @@
     <Compile Include="Euler8.cs" />
     <Compile Include="Euler9.cs" />
     <Compile Include="Euler56.cs" />
-    <Compile Include="Main.cs" />
+    <Compile Include="EulerProblem.cs" />
+    <Compile Include="ExtensionUtils.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Euler1.cs" />
     <Compile Include="Euler19.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
