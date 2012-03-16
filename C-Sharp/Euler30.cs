@@ -10,24 +10,11 @@ public class Euler30 : EulerProblem
 
     public override object Solution()
     {
-        BigInteger sum = 0;
-
-        foreach (var current in Enumerable.Range(2, MAX))
-        {
-            if (current == GetDigits(current).Sum(n => Math.Pow(n, 5)))
-            {
-                sum += current;
-            }
-        }
-
-        return sum;
+        return Enumerable.Range(2, MAX).Where(n => n == GetDigits(n).Sum(i => Math.Pow(i, 5))).Sum();
     }
 
     IEnumerable<int> GetDigits(int number)
     {
-        foreach (var c in number.ToString())
-        {
-            yield return int.Parse(c.ToString());
-        }
+        return number.ToString().Select(c => int.Parse(c.ToString()));
     }
 }
