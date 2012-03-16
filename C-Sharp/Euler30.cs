@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
-using System.Text;
 using ProjectEuler;
 
 public class Euler30 : EulerProblem
 {
-    private const int MAX = 100000;
+    private const int MAX = 1000000;
 
     public override object Solution()
     {
