@@ -57,6 +57,7 @@
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Euler18.cs" />
     <Compile Include="Euler21.cs" />
     <Compile Include="Euler10.cs" />
     <Compile Include="Euler11.cs" />
@@ -123,6 +124,9 @@
     </Content>
     <Content Include="Euler13.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Euler18.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Euler22.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
