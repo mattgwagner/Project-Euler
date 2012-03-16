@@ -2,87 +2,89 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using ProjectEuler;
 using System.IO;
 
-class Euler59 : EulerProblem
+namespace ProjectEuler
 {
-    string alphabet = "abcdefghijklmnopqrtuvwxyz";
-
-    List<string> decrypted = new List<string>();
-
-    public override object Solution()
+    class Euler59 : EulerProblem
     {
-        var cipherText = GetCipherText();
+        string alphabet = "abcdefghijklmnopqrtuvwxyz";
 
-        int sum = 0;
+        List<string> decrypted = new List<string>();
 
-        foreach (char a in alphabet)
+        public override object Solution()
         {
-            foreach (char b in alphabet)
+            var cipherText = GetCipherText();
+
+            int sum = 0;
+
+            foreach (char a in alphabet)
             {
-                foreach (char c in alphabet)
+                foreach (char b in alphabet)
                 {
-                    StringBuilder sb = new StringBuilder();
-
-                    int curr = 0;
-
-                    // go through each char and get the XOR'd value, adding it to the SB
-                    foreach (char x in cipherText)
+                    foreach (char c in alphabet)
                     {
-                        if (curr % 3 == 0)
+                        StringBuilder sb = new StringBuilder();
+
+                        int curr = 0;
+
+                        // go through each char and get the XOR'd value, adding it to the SB
+                        foreach (char x in cipherText)
                         {
-                            sb.Append((char)(x ^ a));
-                        }
-                        else if (curr % 3 == 1)
-                        {
-                            sb.Append((char)(x ^ b));
-                        }
-                        else
-                        {
-                            sb.Append((char)(x ^ c));
+                            if (curr % 3 == 0)
+                            {
+                                sb.Append((char)(x ^ a));
+                            }
+                            else if (curr % 3 == 1)
+                            {
+                                sb.Append((char)(x ^ b));
+                            }
+                            else
+                            {
+                                sb.Append((char)(x ^ c));
+                            }
+
+                            curr++;
                         }
 
-                        curr++;
-                    }
+                        string content = sb.ToString();
 
-                    string content = sb.ToString();
-
-                    // check for some common english words
-                    if (content.Contains(" the ") && content.Contains(" a ") && content.Contains(" and "))
-                    {
-                        sum = content.Sum(ch => ch);
+                        // check for some common english words
+                        if (content.Contains(" the ") && content.Contains(" a ") && content.Contains(" and "))
+                        {
+                            sum = content.Sum(ch => ch);
+                        }
                     }
                 }
             }
+
+            return sum;
         }
 
-        return sum;
-    }
-
-    protected int Sum(string str)
-    {
-        return str.Sum(c => (int)c);
-    }
-
-    protected String GetCipherText()
-    {
-        List<char> chars = new List<char>();
-
-        using (StreamReader rdr = new StreamReader("Euler59.txt"))
+        protected int Sum(string str)
         {
-            string cipherText = rdr.ReadToEnd();
-
-            foreach (string s in cipherText.Split(','))
-            {
-                chars.Add((char)int.Parse(s));
-            }
+            return str.Sum(c => (int)c);
         }
 
-        StringBuilder sb = new StringBuilder();
+        protected String GetCipherText()
+        {
+            List<char> chars = new List<char>();
 
-        foreach (char c in chars) sb.Append(c);
+            using (StreamReader rdr = new StreamReader("Euler59.txt"))
+            {
+                string cipherText = rdr.ReadToEnd();
 
-        return sb.ToString();
+                foreach (string s in cipherText.Split(','))
+                {
+                    chars.Add((char)int.Parse(s));
+                }
+            }
+
+            StringBuilder sb = new StringBuilder();
+
+            foreach (char c in chars) sb.Append(c);
+
+            return sb.ToString();
+        }
     }
 }

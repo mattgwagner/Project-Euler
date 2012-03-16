@@ -1,22 +1,25 @@
 ﻿using System;
 
-public class Euler9 : ProjectEuler.EulerProblem
+namespace ProjectEuler
 {
-    public override object Solution()
+    public class Euler9 : ProjectEuler.EulerProblem
     {
-        for (int a = 1; a < 1000; a++)
+        public override object Solution()
         {
-            for (int b = (a + 1); b < 1000; b++)
+            for (int a = 1; a < 1000; a++)
             {
-                Double c = Math.Sqrt((a * a) + (b * b));
-
-                if (a < b && b < c && (a + b + c) == 1000)
+                for (int b = (a + 1); b < 1000; b++)
                 {
-                    return (a * b * c);
+                    Double c = Math.Sqrt((a * a) + (b * b));
+
+                    if (a < b && b < c && (a + b + c) == 1000)
+                    {
+                        return (a * b * c);
+                    }
                 }
             }
-        }
 
-        throw new NotFiniteNumberException("Uh oh");
+            throw new NotFiniteNumberException("Uh oh");
+        }
     }
 }

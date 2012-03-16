@@ -1,11 +1,13 @@
 ﻿using System.Linq;
 using System.Numerics;
-using ProjectEuler;
 
-class Euler20 : EulerProblem
+namespace ProjectEuler
 {
-    public override object Solution()
+    class Euler20 : EulerProblem
     {
-        return new BigInteger(100).Factorial().ToString().Sum(c => int.Parse(c.ToString()));
+        public override object Solution()
+        {
+            return new BigInteger(100).Factorial().ToString().Sum(c => int.Parse(c.ToString()));
+        }
     }
 }

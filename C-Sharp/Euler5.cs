@@ -1,16 +1,19 @@
 ﻿using System.Linq;
 
-class Euler5 : ProjectEuler.EulerProblem
+namespace ProjectEuler
 {
-    public override object Solution()
+    class Euler5 : ProjectEuler.EulerProblem
     {
-        int current = 20;
-
-        while (!Enumerable.Range(1, 20).All(i => current % i == 0))
+        public override object Solution()
         {
-            current += 20;
-        }
+            int current = 20;
 
-        return current;
+            while (!Enumerable.Range(1, 20).All(i => current % i == 0))
+            {
+                current += 20;
+            }
+
+            return current;
+        }
     }
 }

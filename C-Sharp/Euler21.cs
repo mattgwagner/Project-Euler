@@ -2,27 +2,30 @@
 using System.Linq;
 
 /* vEvaluate the sum of all the amicable numbers under 10000. */
-public class Euler21 : ProjectEuler.EulerProblem
+namespace ProjectEuler
 {
-    public override object Solution()
+    public class Euler21 : ProjectEuler.EulerProblem
     {
-        int sum = 0;
-
-        foreach (int i in Enumerable.Range(1, 10000))
+        public override object Solution()
         {
-            int res = GetDivisors(i).Sum();
+            int sum = 0;
 
-            if (i != res && i == GetDivisors(res).Sum())
+            foreach (int i in Enumerable.Range(1, 10000))
             {
-                sum += i;
+                int res = GetDivisors(i).Sum();
+
+                if (i != res && i == GetDivisors(res).Sum())
+                {
+                    sum += i;
+                }
             }
+
+            return sum;
         }
 
-        return sum;
-    }
-
-    IEnumerable<int> GetDivisors(int num)
-    {
-        return Enumerable.Range(1, num).Where(i => num % i == 0 && i != num);
+        IEnumerable<int> GetDivisors(int num)
+        {
+            return Enumerable.Range(1, num).Where(i => num % i == 0 && i != num);
+        }
     }
 }

@@ -1,39 +1,40 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using ProjectEuler;
 using System.Numerics;
-using System;
 
-class Euler12 : EulerProblem
+namespace ProjectEuler
 {
-    public override object Solution()
+    class Euler12 : EulerProblem
     {
-        foreach (BigInteger i in GetTriangleNumbers())
+        public override object Solution()
         {
-            if (GetDivisors(i).Count() > 500) return i;
+            foreach (BigInteger i in GetTriangleNumbers())
+            {
+                if (GetDivisors(i).Count() > 500) return i;
+            }
+
+            return -1;
         }
 
-        return -1;
-    }
-
-    IEnumerable<BigInteger> GetDivisors(BigInteger x)
-    {
-        for (int i = 1; i < (x / 2) + 1; i++)
+        IEnumerable<BigInteger> GetDivisors(BigInteger x)
         {
-            if (x % i == 0) yield return i;
+            for (int i = 1; i < (x / 2) + 1; i++)
+            {
+                if (x % i == 0) yield return i;
+            }
+
+            yield return x;
         }
 
-        yield return x;
-    }
-
-    IEnumerable<BigInteger> GetTriangleNumbers()
-    {
-        int current = 10000000;
-        BigInteger sum = 0;
-
-        while (true)
+        IEnumerable<BigInteger> GetTriangleNumbers()
         {
-            yield return sum += current++;
+            int current = 10000000;
+            BigInteger sum = 0;
+
+            while (true)
+            {
+                yield return sum += current++;
+            }
         }
     }
 }

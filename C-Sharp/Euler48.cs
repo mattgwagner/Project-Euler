@@ -1,26 +1,28 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
-using ProjectEuler;
 
 /* Find the last ten digits of the series, 1^1 + 2^2 + 3^3 + ... + 1000^1000. */
-class Euler48 : EulerProblem
+namespace ProjectEuler
 {
-    public override object Solution()
+    class Euler48 : EulerProblem
     {
-        string output = getPowers().Sum().ToString();
-
-        return BigInteger.Parse(output.Substring(output.Length - 10));
-    }
-
-    /// <summary>
-    /// Have to do this because Enumerable.Range().Sum(i => Math.pow(i, i)) will overflow
-    /// </summary>
-    public IEnumerable<BigInteger> getPowers()
-    {
-        foreach (int i in Enumerable.Range(1, 1000))
+        public override object Solution()
         {
-            yield return BigInteger.Pow(i, i);
+            string output = getPowers().Sum().ToString();
+
+            return BigInteger.Parse(output.Substring(output.Length - 10));
+        }
+
+        /// <summary>
+        /// Have to do this because Enumerable.Range().Sum(i => Math.pow(i, i)) will overflow
+        /// </summary>
+        public IEnumerable<BigInteger> getPowers()
+        {
+            foreach (int i in Enumerable.Range(1, 1000))
+            {
+                yield return BigInteger.Pow(i, i);
+            }
         }
     }
 }

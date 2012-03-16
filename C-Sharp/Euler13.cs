@@ -1,24 +1,26 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
-using ProjectEuler;
 
-class Euler13 : EulerProblem
+namespace ProjectEuler
 {
-    public override object Solution()
+    class Euler13 : EulerProblem
     {
-        return GetNumbers().Sum().ToString().Substring(0, 10);
-    }
-
-    protected IEnumerable<BigInteger> GetNumbers()
-    {
-        string str;
-
-        using (StreamReader rdr = new StreamReader("Euler13.txt"))
+        public override object Solution()
         {
-            while ((str = rdr.ReadLine()) != null)
+            return GetNumbers().Sum().ToString().Substring(0, 10);
+        }
+
+        protected IEnumerable<BigInteger> GetNumbers()
+        {
+            string str;
+
+            using (StreamReader rdr = new StreamReader("Euler13.txt"))
             {
-                yield return BigInteger.Parse(str);
+                while ((str = rdr.ReadLine()) != null)
+                {
+                    yield return BigInteger.Parse(str);
+                }
             }
         }
     }

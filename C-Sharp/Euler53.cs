@@ -1,29 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using ProjectEuler;
-using System.Numerics;
+﻿using System.Numerics;
 
-class Euler53 : EulerProblem
+namespace ProjectEuler
 {
-    int count = 0;
-
-    public override object Solution()
+    class Euler53 : EulerProblem
     {
-        for (int n = 1; n <= 100; n++)
+        int count = 0;
+
+        public override object Solution()
         {
-            for (int r = 1; r <= n; r++)
+            for (int n = 1; n <= 100; n++)
             {
-                if (Evaluate(n, r) > 1000000) count++;
+                for (int r = 1; r <= n; r++)
+                {
+                    if (Evaluate(n, r) > 1000000) count++;
+                }
             }
+
+            return count;
         }
 
-        return count;
-    }
-
-    protected BigInteger Evaluate(BigInteger n, BigInteger r)
-    {
-        return n.Factorial() / (r.Factorial() * (n - r).Factorial());
+        protected BigInteger Evaluate(BigInteger n, BigInteger r)
+        {
+            return n.Factorial() / (r.Factorial() * (n - r).Factorial());
+        }
     }
 }

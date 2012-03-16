@@ -2,43 +2,45 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using ProjectEuler;
 
-class Euler42 : EulerProblem
+namespace ProjectEuler
 {
-    public const String LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-    public override object Solution()
+    class Euler42 : EulerProblem
     {
-        List<String> list = new List<String>();
+        public const String LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-        using (StreamReader rdr = new StreamReader("Euler42.txt"))
+        public override object Solution()
         {
-            list = new List<String>(rdr.ReadToEnd().Replace("\"", "").Split(','));
+            List<String> list = new List<String>();
+
+            using (StreamReader rdr = new StreamReader("Euler42.txt"))
+            {
+                list = new List<String>(rdr.ReadToEnd().Replace("\"", "").Split(','));
+            }
+
+            var nums = GetTriangleNumbers(50);
+
+            int count = 0;
+
+            foreach (String s in list)
+            {
+                if (nums.Contains(Value(s))) count++;
+            }
+
+            return count;
         }
 
-        var nums = GetTriangleNumbers(50);
-
-        int count = 0;
-
-        foreach (String s in list)
+        protected IEnumerable<double> GetTriangleNumbers(int n)
         {
-            if (nums.Contains(Value(s))) count++;
+            for (int i = 1; i < n; i++)
+            {
+                yield return (.5 * i) * (i + 1);
+            }
         }
 
-        return count;
-    }
-
-    protected IEnumerable<double> GetTriangleNumbers(int n)
-    {
-        for (int i = 1; i < n; i++)
+        protected int Value(String val)
         {
-            yield return (.5 * i) * (i + 1);
+            return val.ToList().Sum(c => LETTERS.IndexOf(c) + 1);
         }
-    }
-
-    protected int Value(String val)
-    {
-        return val.ToList().Sum(c => LETTERS.IndexOf(c) + 1);
     }
 }

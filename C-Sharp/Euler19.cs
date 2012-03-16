@@ -1,22 +1,25 @@
 using System;
 
-public class Euler19 : ProjectEuler.EulerProblem
+namespace ProjectEuler
 {
-    public override object Solution()
+    public class Euler19 : ProjectEuler.EulerProblem
     {
-        int count = 0;
-
-        DateTime d = new DateTime(1901, 1, 1);
-        DateTime end = new DateTime(2000, 12, 31);
-
-        while (d < end)
+        public override object Solution()
         {
-            if (d.DayOfWeek == DayOfWeek.Sunday)
-                count++;
+            int count = 0;
 
-            d = d.AddMonths(1);
+            DateTime d = new DateTime(1901, 1, 1);
+            DateTime end = new DateTime(2000, 12, 31);
+
+            while (d < end)
+            {
+                if (d.DayOfWeek == DayOfWeek.Sunday)
+                    count++;
+
+                d = d.AddMonths(1);
+            }
+
+            return count;
         }
-
-        return count;
     }
 }

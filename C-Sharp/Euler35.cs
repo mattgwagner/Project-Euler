@@ -1,26 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
-using ProjectEuler;
 
-class Euler35 : EulerProblem
+namespace ProjectEuler
 {
-    const int MAX = 2000000;
-
-    public override object Solution()
+    class Euler35 : EulerProblem
     {
+        const int MAX = 2000000;
 
-
-
-        throw new NotImplementedException();
-    }
-
-    protected IEnumerable<int> GetRotations(int number)
-    {
-        throw new NotImplementedException();
-
-        for (int i = 0; i < number.ToString().Length; i++)
+        public override object Solution()
         {
-            yield return i;
+
+
+
+            throw new NotImplementedException();
+        }
+
+        protected IEnumerable<int> GetRotations(int number)
+        {
+            throw new NotImplementedException();
+
+            for (int i = 0; i < number.ToString().Length; i++)
+            {
+                yield return i;
+            }
         }
     }
 }

@@ -1,43 +1,45 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Numerics;
-using ProjectEuler;
 
 /* What is the first term in the Fibonacci sequence to contain 1000 digits? */
-class Euler25 : EulerProblem
+namespace ProjectEuler
 {
-    public override object Solution()
+    class Euler25 : EulerProblem
     {
-        int count = 0;
-
-        foreach (var i in Fibonacci())
+        public override object Solution()
         {
-            count++;
+            int count = 0;
 
-            if (i.ToString().Length == 1000)
+            foreach (var i in Fibonacci())
             {
-                return count;
+                count++;
+
+                if (i.ToString().Length == 1000)
+                {
+                    return count;
+                }
             }
+
+            throw new NotFiniteNumberException("Uh oh");
         }
 
-        throw new NotFiniteNumberException("Uh oh");
-    }
-
-    IEnumerable<BigInteger> Fibonacci()
-    {
-        BigInteger curr = 1, prev = 1;
-
-        yield return prev;
-        yield return curr;
-
-        while (true)
+        IEnumerable<BigInteger> Fibonacci()
         {
-            BigInteger tmp = curr;
+            BigInteger curr = 1, prev = 1;
 
-            curr = (prev + curr);
-            prev = tmp;
-
+            yield return prev;
             yield return curr;
+
+            while (true)
+            {
+                BigInteger tmp = curr;
+
+                curr = (prev + curr);
+                prev = tmp;
+
+                yield return curr;
+            }
         }
     }
 }

@@ -1,35 +1,37 @@
 ﻿using System.Numerics;
-using ProjectEuler;
 
 /* Considering natural numbers of the form, a^b, where a, b  100, what is the maximum digital sum? */
-class Euler56 : EulerProblem
+namespace ProjectEuler
 {
-    public override object Solution()
+    class Euler56 : EulerProblem
     {
-        BigInteger max = 0;
-
-        for (int a = 1; a < 100; a++)
+        public override object Solution()
         {
-            for (int b = 1; b < 100; b++)
+            BigInteger max = 0;
+
+            for (int a = 1; a < 100; a++)
             {
-                var sum = GetDigitalSum(a, b);
+                for (int b = 1; b < 100; b++)
+                {
+                    var sum = GetDigitalSum(a, b);
 
-                if (sum > max) max = sum;
+                    if (sum > max) max = sum;
+                }
             }
+
+            return max;
         }
 
-        return max;
-    }
-
-    BigInteger GetDigitalSum(int a, int b)
-    {
-        BigInteger sum = 0;
-
-        foreach (var c in BigInteger.Pow(a, b).ToString())
+        BigInteger GetDigitalSum(int a, int b)
         {
-            sum += int.Parse(c + "");
-        }
+            BigInteger sum = 0;
 
-        return sum;
+            foreach (var c in BigInteger.Pow(a, b).ToString())
+            {
+                sum += int.Parse(c + "");
+            }
+
+            return sum;
+        }
     }
 }

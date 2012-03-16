@@ -1,10 +1,13 @@
 ﻿using System.Linq;
 using System.Numerics;
 
-class Euler16 : ProjectEuler.EulerProblem
+namespace ProjectEuler
 {
-    public override object Solution()
+    class Euler16 : ProjectEuler.EulerProblem
     {
-        return BigInteger.Pow(2, 1000).ToString().Sum(c => int.Parse(c.ToString()));
+        public override object Solution()
+        {
+            return BigInteger.Pow(2, 1000).ToString().Sum(c => int.Parse(c.ToString()));
+        }
     }
 }

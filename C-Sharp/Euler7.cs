@@ -1,12 +1,14 @@
 ﻿using System.Linq;
-using ProjectEuler;
 
-public class Euler7 : EulerProblem
+namespace ProjectEuler
 {
-    const int MAX = 1000000;
-
-    public override object Solution()
+    public class Euler7 : EulerProblem
     {
-        return FindPrimesUpToMax(MAX).Skip(10000).First();
+        const int MAX = 1000000;
+
+        public override object Solution()
+        {
+            return FindPrimesUpToMax(MAX).Skip(10000).First();
+        }
     }
 }

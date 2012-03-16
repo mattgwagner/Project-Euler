@@ -1,27 +1,29 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using ProjectEuler;
 
-class Euler4 : EulerProblem
+namespace ProjectEuler
 {
-    public override object Solution()
+    class Euler4 : EulerProblem
     {
-        return getPalindromicNumbersUpTo1000().Max();
-    }
-
-    private IEnumerable<int> getPalindromicNumbersUpTo1000()
-    {
-        int tmp = 0;
-
-        foreach (int x in Enumerable.Range(100, 900))
+        public override object Solution()
         {
-            foreach (int y in Enumerable.Range(100, 900))
-            {
-                tmp = x * y;
+            return getPalindromicNumbersUpTo1000().Max();
+        }
 
-                if (tmp.ToString().isPalindrome())
+        private IEnumerable<int> getPalindromicNumbersUpTo1000()
+        {
+            int tmp = 0;
+
+            foreach (int x in Enumerable.Range(100, 900))
+            {
+                foreach (int y in Enumerable.Range(100, 900))
                 {
-                    yield return tmp;
+                    tmp = x * y;
+
+                    if (tmp.ToString().isPalindrome())
+                    {
+                        yield return tmp;
+                    }
                 }
             }
         }

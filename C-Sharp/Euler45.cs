@@ -1,39 +1,41 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
-using ProjectEuler;
 
 /* Find the next triangle number that is also pentagonal and hexagonal. */
-public class Euler45 : EulerProblem
+namespace ProjectEuler
 {
-    const int MAX = 100000;
-
-    public override object Solution()
+    public class Euler45 : EulerProblem
     {
-        return GetTriangles().Intersect(GetPentagonals()).Intersect(GetHexagonals()).FirstOrDefault();
-    }
+        const int MAX = 100000;
 
-    IEnumerable<BigInteger> GetTriangles()
-    {
-        foreach (BigInteger bi in Enumerable.Range(286, MAX))
+        public override object Solution()
         {
-            yield return bi * (bi + 1) / 2;
+            return GetTriangles().Intersect(GetPentagonals()).Intersect(GetHexagonals()).FirstOrDefault();
         }
-    }
 
-    IEnumerable<BigInteger> GetPentagonals()
-    {
-        foreach (BigInteger bi in Enumerable.Range(144, MAX))
+        IEnumerable<BigInteger> GetTriangles()
         {
-            yield return bi * (3 * bi - 1) / 2;
+            foreach (BigInteger bi in Enumerable.Range(286, MAX))
+            {
+                yield return bi * (bi + 1) / 2;
+            }
         }
-    }
 
-    IEnumerable<BigInteger> GetHexagonals()
-    {
-        foreach (BigInteger bi in Enumerable.Range(166, MAX))
+        IEnumerable<BigInteger> GetPentagonals()
         {
-            yield return bi * (2 * bi - 1);
+            foreach (BigInteger bi in Enumerable.Range(144, MAX))
+            {
+                yield return bi * (3 * bi - 1) / 2;
+            }
+        }
+
+        IEnumerable<BigInteger> GetHexagonals()
+        {
+            foreach (BigInteger bi in Enumerable.Range(166, MAX))
+            {
+                yield return bi * (2 * bi - 1);
+            }
         }
     }
 }

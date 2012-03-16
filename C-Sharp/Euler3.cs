@@ -1,23 +1,25 @@
 ﻿using System;
-using ProjectEuler;
 
-public class Euler3 : EulerProblem
+namespace ProjectEuler
 {
-    public override object Solution()
+    public class Euler3 : EulerProblem
     {
-        long n = 600851475143;
-        long i = 2;
-
-        while (Math.Pow(i, 2) < n)
+        public override object Solution()
         {
-            while (n % i == 0)
+            long n = 600851475143;
+            long i = 2;
+
+            while (Math.Pow(i, 2) < n)
             {
-                n = n / i;
+                while (n % i == 0)
+                {
+                    n = n / i;
+                }
+
+                i++;
             }
 
-            i++;
+            return n;
         }
-
-        return n;
     }
 }

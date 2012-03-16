@@ -1,17 +1,19 @@
 ﻿using System.Numerics;
-using ProjectEuler;
 
-class Euler10 : EulerProblem
+namespace ProjectEuler
 {
-    public override object Solution()
+    class Euler10 : EulerProblem
     {
-        BigInteger bi = new BigInteger();
-
-        foreach (var i in FindPrimesUpToMax(2000000))
+        public override object Solution()
         {
-            bi += i;
-        }
+            BigInteger bi = new BigInteger();
 
-        return bi;
+            foreach (var i in FindPrimesUpToMax(2000000))
+            {
+                bi += i;
+            }
+
+            return bi;
+        }
     }
 }

@@ -2,36 +2,38 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using ProjectEuler;
 
-class Euler22 : EulerProblem
+namespace ProjectEuler
 {
-    const String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-    public override object Solution()
+    class Euler22 : EulerProblem
     {
-        var names = GetNames();
+        const String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-        names.Sort();
-
-        int num = 1;
-        int total = 0;
-
-        foreach (var name in names)
+        public override object Solution()
         {
-            total += num * name.Sum(c => alphabet.IndexOf(c) + 1);
+            var names = GetNames();
 
-            num++;
+            names.Sort();
+
+            int num = 1;
+            int total = 0;
+
+            foreach (var name in names)
+            {
+                total += num * name.Sum(c => alphabet.IndexOf(c) + 1);
+
+                num++;
+            }
+
+            return total;
         }
 
-        return total;
-    }
-
-    List<String> GetNames()
-    {
-        using (StreamReader rdr = new StreamReader("Euler22.txt"))
+        List<String> GetNames()
         {
-            return new List<String>(rdr.ReadToEnd().Replace("\"", "").Split(','));
+            using (StreamReader rdr = new StreamReader("Euler22.txt"))
+            {
+                return new List<String>(rdr.ReadToEnd().Replace("\"", "").Split(','));
+            }
         }
     }
 }

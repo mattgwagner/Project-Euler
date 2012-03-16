@@ -1,9 +1,12 @@
 ﻿using System.Linq;
 
-class Euler1 : ProjectEuler.EulerProblem
+namespace ProjectEuler
 {
-    public override object Solution()
+    class Euler1 : ProjectEuler.EulerProblem
     {
-        return Enumerable.Range(1, 999).Where(i => i % 3 == 0 || i % 5 == 0).Sum();
+        public override object Solution()
+        {
+            return Enumerable.Range(1, 999).Where(i => i % 3 == 0 || i % 5 == 0).Sum();
+        }
     }
 }

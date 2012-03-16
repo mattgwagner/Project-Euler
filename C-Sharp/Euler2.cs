@@ -1,30 +1,33 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-class Euler2 : ProjectEuler.EulerProblem
+namespace ProjectEuler
 {
-    const int MAX = 4000000;
-
-    public override object Solution()
+    class Euler2 : ProjectEuler.EulerProblem
     {
-        return getEvenFibonaciTo4Million().Sum();
-    }
+        const int MAX = 4000000;
 
-    public IEnumerable<int> getEvenFibonaciTo4Million()
-    {
-        int tmp = -1;
-        int current = 1;
-        int previous = 0;
-
-        while (current < MAX)
+        public override object Solution()
         {
-            tmp = current;
-            current = previous + current;
-            previous = tmp;
+            return getEvenFibonaciTo4Million().Sum();
+        }
 
-            if (current % 2 == 0)
+        public IEnumerable<int> getEvenFibonaciTo4Million()
+        {
+            int tmp = -1;
+            int current = 1;
+            int previous = 0;
+
+            while (current < MAX)
             {
-                yield return current;
+                tmp = current;
+                current = previous + current;
+                previous = tmp;
+
+                if (current % 2 == 0)
+                {
+                    yield return current;
+                }
             }
         }
     }
