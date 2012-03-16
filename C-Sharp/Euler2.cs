@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace ProjectEuler
 {
-    class Euler2 : ProjectEuler.EulerProblem
+    class Euler2 : EulerProblem
     {
         const int MAX = 4000000;
 

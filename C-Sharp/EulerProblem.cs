@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace ProjectEuler
@@ -15,7 +16,7 @@ namespace ProjectEuler
         {
             var vals = new List<int>((int)(max / (Math.Log(max) - 1.08366)));
             var maxSquareRoot = Math.Sqrt(max);
-            var eliminated = new System.Collections.BitArray(max + 1);
+            var eliminated = new BitArray(max + 1);
 
             vals.Add(2);
 

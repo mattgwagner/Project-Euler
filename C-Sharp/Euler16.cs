@@ -3,7 +3,7 @@ using System.Numerics;
 
 namespace ProjectEuler
 {
-    class Euler16 : ProjectEuler.EulerProblem
+    class Euler16 : EulerProblem
     {
         public override object Solution()
         {

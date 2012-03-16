@@ -2,7 +2,7 @@
 
 namespace ProjectEuler
 {
-    class Euler5 : ProjectEuler.EulerProblem
+    class Euler5 : EulerProblem
     {
         public override object Solution()
         {

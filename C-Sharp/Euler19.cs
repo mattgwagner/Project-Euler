@@ -2,7 +2,7 @@ using System;
 
 namespace ProjectEuler
 {
-    public class Euler19 : ProjectEuler.EulerProblem
+    public class Euler19 : EulerProblem
     {
         public override object Solution()
         {
