@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Numerics;
 using ProjectEuler;
 
 public class Euler30 : EulerProblem
@@ -10,11 +8,6 @@ public class Euler30 : EulerProblem
 
     public override object Solution()
     {
-        return Enumerable.Range(2, MAX).Where(n => n == GetDigits(n).Sum(i => Math.Pow(i, 5))).Sum();
-    }
-
-    IEnumerable<int> GetDigits(int number)
-    {
-        return number.ToString().Select(c => int.Parse(c.ToString()));
+        return Enumerable.Range(2, MAX).Where(n => n == n.ToString().Select(c => int.Parse(c.ToString())).Sum(i => Math.Pow(i, 5))).Sum();
     }
 }
