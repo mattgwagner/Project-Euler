@@ -12,7 +12,7 @@ namespace ProjectEuler
         {
             ReadNumbers();
 
-            return LargestHorizontally().Union(LargestVertically()).Union(LargestDiagonallyRight()).Union(LargestDiagonallyLeft()).Max();
+            return new[] { LargestHorizontally(), LargestVertically(), LargestDiagonallyRight(), LargestDiagonallyLeft() }.SelectMany(x => x).Max();
         }
 
         protected IEnumerable<int> LargestHorizontally()
