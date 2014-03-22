@@ -9,8 +9,8 @@ namespace ProjectEuler
         public override object Solution()
         {
             var range = from r in Enumerable.Range(1, 1000000)
-                        where r.ToString().isPalindrome() &&
-                              Convert.ToString(r, 2).isPalindrome()
+                        where r.ToString().IsPalindrome() &&
+                              Convert.ToString(r, 2).IsPalindrome()
                         select r;
 
             return range.Sum();

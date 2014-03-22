@@ -36,7 +36,7 @@ namespace ProjectEuler
             return f != 1 ? (f * Factorial(f - 1)) : 1;
         }
 
-        public static Boolean isPalindrome(this String str)
+        public static Boolean IsPalindrome(this String str)
         {
             return str.Equals(new String(str.Reverse().ToArray()));
         }

@@ -20,7 +20,7 @@ namespace ProjectEuler
                 {
                     tmp = x * y;
 
-                    if (tmp.ToString().isPalindrome())
+                    if (tmp.ToString().IsPalindrome())
                     {
                         yield return tmp;
                     }
