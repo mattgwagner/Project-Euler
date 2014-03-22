@@ -19,22 +19,10 @@ namespace ProjectEuler
 
                 q.Enqueue(int.Parse(c.ToString()));
 
-                max = Product(q) > max ? Product(q) : max;
+                max = q.Product() > max ? q.Product() : max;
             }
 
-            return new BigInteger(max);
-        }
-
-        protected int Product(IEnumerable<int> items)
-        {
-            int product = 1;
-
-            foreach (int i in items)
-            {
-                product *= i;
-            }
-
-            return product;
+            return max;
         }
     }
 }
